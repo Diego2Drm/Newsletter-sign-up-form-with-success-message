@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+
+  <!-- Sign-up form start -->
+  <section class="sign-up-start">
+    <div class="img__content">
+
+    </div>
+    <div class="info__content">
+
+      <h1> Stay updated!</h1>
+
+      <p>
+        Join 60,000+ product managers receiving monthly updates on:
+      </p>
+
+      <ul class="info__list-content">
+        <li>
+          <img src="./images/icon-list.svg" alt="icon-list">
+          Product discovery and building what matters
+        </li>
+        <li>
+          <img src="./images/icon-list.svg" alt="icon-list"> Measuring to ensure updates are a success
+        </li>
+        <li>
+          <img src="./images/icon-list.svg" alt="icon-list">
+          And much more!
+        </li>
+      </ul>
+      <form action="#">
+
+        <p class="email-text">
+          Email address
+          <span class="message--error-inactive">Valid email required</span>
+        </p>
+
+        <input class="input-email" type="email" placeholder="email@company.com">
+
+        <button type="submit" id="btnSubmit">
+          Subscribe to monthly newsletter
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+  <section class="success-message-start inactive">
+    <div class="success_content">
+      <img src="./images/icon-success.svg" alt="icon-success">
+      <h2>
+        Thanks for subscribing!
+      </h2>
+      <p class="message">
+        A confirmation email has been sent to <span id="registeredMail">asdsa</span>.
+        Please open it and click the button inside to confirm your subscription.
+
+      </p>
+
+      <div class="btn__content">
+        <button type="button" id="btnDismiss">
+          Dismiss message
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success message end -->
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">
+      Frontend Mentor</a>.
+    Coded by <a href="https://github.com/Diego2Drm/Newsletter-sign-up-form-with-success-message">Diego Ramírez</a>.
+  </div>
+
+
+  <script>
+    const inputEmail = document.querySelector('.input-email')
+    const spanError = document.querySelector('.message--error-inactive')
+    const btnSubmit = document.getElementById('btnSubmit');
+
+    const confirmEmail = document.querySelector('.success-message-start');
+    const registeredMail = document.getElementById('registeredMail');
+    const btnDismiss = document.getElementById('btnDismiss');
+
+    btnSubmit.addEventListener('click', (e) => {
+      const inputEmail = document.querySelector('.input-email').value;
+      e.preventDefault();
+      validEmail(inputEmail)
+    }
+    )
+    btnDismiss.addEventListener('click', () =>{
+      confirmEmail.classList.add('inactive');
+      inputEmail.value = "";
+    }
+    )
+
+
+    function validEmail(email) {
+      let expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+      const valid = expReg.test(email);
+
+      if (valid) {
+        confirmEmail.classList.remove('inactive');
+        registeredMail.innerHTML = inputEmail.value;
+        spanError.classList.add('message--error-inactive');
+        spanError.classList.remove('message--error');
+        inputEmail.classList.remove('input--error');
+      } else {
+        spanError.classList.remove('message--error-inactive');
+        spanError.classList.add('message--error');
+        inputEmail.classList.add('input--error');
+        
+      }
+
+    }
+
+
+
+  </script>
+</body>
+
+</html>

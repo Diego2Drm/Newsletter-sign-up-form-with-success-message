@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swa');
+
+:root {
+  /* ### Primary */
+  --Tomato: #ff6257;
+
+  /* ### Neutral */
+  --Dark-Slate-Grey: #242742;
+  --Charcoal-Grey: #36384e;
+  --Grey: #9294a0;
+  --White: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Sign-up form start */
+.sign-up-start {
+  width: 37.5rem;
+  margin: 0 auto;
+ 
+}
+
+.img__content {
+  background: url(./images/illustration-sign-up-mobile.svg) no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 30rem;
+}
+
+.info__content {
+  padding: 3rem;
+
+  h1 {
+    font-size: 4rem;
+    color: var(--Dark-Slate-Grey);
+  }
+
+  p {
+    font-size: 1.6rem;
+    margin-block-start: 2rem;
+    font-weight: 400;
+    color: var(--Charcoal-Grey);
+  }
+}
+
+.info__content .info__list-content {
+  list-style: none;
+
+  li {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.6rem;
+    color: var(--Dark-Slate-Grey);
+    width: 100%;
+    margin-block: 2rem;
+
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+form {
+  width: 100%;
+  margin-block-start: 3rem;
+
+  .email-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--Dark-Slate-Grey);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+  }
+
+  .input-email {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 2rem;
+    outline: none;
+    border: 1px solid var(--Grey);
+    margin: 1rem 0 2rem 0;
+    font-size: 1.6rem;
+    color: black;
+  }
+  #btnSubmit {
+    width: 100%;
+    background: var(--Dark-Slate-Grey);
+    color: var(--White);
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 1rem;
+  }
+}
+
+/* error */
+.message--error-inactive{
+  display: none;
+}
+.message--error{
+  color:var(--Tomato);
+}
+.input--error{
+  border: 2px solid var(--Tomato) !important;
+  background: #ffd6d3;
+
+}
+.input--error::placeholder{
+  color: var(--Tomato);
+}
+
+
+
+
+/* Success message start */
+.success-message-start {
+  background: var(--White);
+  position: absolute;
+  inset: 0;
+  padding: 15rem 2rem 0;
+  width: 100%;
+  height: 100vh;
+
+.success_content{
+  width: 35rem;
+  h2 {
+    font-size: 4rem;
+    margin: 3rem 0;
+    color: var(--Dark-Slate-Grey);
+  }
+
+  .message {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+
+    #registeredMail {
+      font-weight: 700;
+    }
+
+  }}
+}
+.btn__content{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-block-start: 20rem;
+  #btnDismiss{
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: var(--Dark-Slate-Grey);
+    color: var(--White);
+    font-weight: 700;
+    font-size: 1.7rem;
+  }
+}
+.inactive{
+  display: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.attribution a {
+  color: hsl(232, 84%, 47%);
+}
+@media (min-width: 1024px){
+  body{
+    background-color: var(--Charcoal-Grey);
+  }
+  /* Sign-up form start */
+  .sign-up-start {
+    background-color: var(--White);
+    width: 100rem;
+    height: 60rem;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-block-start: 10rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 .5rem 2rem 2rem rgba(255, 98, 87, .5);
+  }
+  .img__content{
+    background: url(./images/illustration-sign-up-desktop.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 45rem;
+    height: 100%;
+  }
+  form {
+    margin-block-start: 4.5rem;
+  }
+  .input-email {
+    cursor: pointer;
+  }
+  #btnSubmit:hover, #btnDismiss:hover{
+    background-color: var(--Tomato);
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem 1rem rgba(255, 98, 87, .5);
+    border: none;
+  }
+
+
+  /* Success message start */
+  .success-message-start {
+    background: var(--Charcoal-Grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .success-message-start .success_content{
+    width: 40rem;
+    height: 45rem;
+    background-color: var(--White);
+    margin: 0;
+    border-radius: 3rem;
+    padding: 3.5rem;
+    box-shadow: 0 1rem 2rem 1rem rgba(255, 98, 87, .5);
+  }
+  .btn__content{
+    margin-block-start: 2rem;
+  }
+
+  .inactive{
+    display: none;
+  }
+  .attribution{
+    color: #ccc;
+  }
+  .attribution a {
+    color: #fff;
+  }
+
+}
